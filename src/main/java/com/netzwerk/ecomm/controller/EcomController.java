@@ -3,10 +3,7 @@ package com.netzwerk.ecomm.controller;
 import com.netzwerk.ecomm.dto.EcomDTO;
 import com.netzwerk.ecomm.serv.EcomServImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/homepage")
@@ -27,9 +24,10 @@ public class EcomController {
         return "DTO not saved";
     }
 
-    @RequestMapping(value = "/findById", method = RequestMethod.GET)
-    public String findById(@RequestBody Integer id) {
-        EcomDTO dto = serv.findById(id);
+    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+    public String findById(@PathVariable Integer id,EcomDTO dto) {
+        dto = serv.findById(id);
+        System.out.println(dto.toString());
         return dto.toString();
     }
 }
