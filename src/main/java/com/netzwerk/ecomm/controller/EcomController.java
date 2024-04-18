@@ -25,9 +25,9 @@ public class EcomController {
     }
 
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
-    public String findById(@PathVariable Integer id,EcomDTO dto) {
-        dto = serv.findById(id);
-        System.out.println(dto.toString());
-        return dto.toString();
+    public EcomDTO findById(@PathVariable Integer id) {
+        EcomDTO  dto = serv.findById(id);
+        System.out.println(dto);
+        return dto;
     }
 }

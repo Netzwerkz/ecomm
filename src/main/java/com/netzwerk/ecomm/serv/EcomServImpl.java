@@ -19,8 +19,8 @@ public class EcomServImpl {
     }
 
     public EcomDTO findById(Integer id) {
-        repo.findById(id);
-        return null;
+        Optional<EcomDTO> ecomDTO =repo.findById(id);
+        return ecomDTO.get();
     }
 
 }
