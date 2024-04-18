@@ -11,6 +11,8 @@ public class EcommApplication {
 
 	public static void main(String[] args) {
 
+//		System.setProperty("spring.devtools.restart.enabled", "false");
+
 		System.out.println("starting app");
 		SpringApplication.run(EcommApplication.class, args);
 		System.out.println("Running app");

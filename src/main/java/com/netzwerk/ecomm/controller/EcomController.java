@@ -5,6 +5,8 @@ import com.netzwerk.ecomm.serv.EcomServImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/homepage")
 public class EcomController {
@@ -29,5 +31,10 @@ public class EcomController {
         EcomDTO  dto = serv.findById(id);
         System.out.println(dto);
         return dto;
+    }
+
+    @RequestMapping(value = "/findByName", method = RequestMethod.GET)
+    public List<EcomDTO> findByName(@RequestParam String name){
+        return serv.findByName(name);
     }
 }

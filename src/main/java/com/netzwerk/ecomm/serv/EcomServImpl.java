@@ -5,7 +5,7 @@ import com.netzwerk.ecomm.repository.EcomRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +21,12 @@ public class EcomServImpl {
     public EcomDTO findById(Integer id) {
         Optional<EcomDTO> ecomDTO =repo.findById(id);
         return ecomDTO.get();
+    }
+
+    public List<EcomDTO> findByName(String name){
+        List<EcomDTO> dto = repo.findByName(name);
+        dto.toString();
+        return dto;
     }
 
 }
