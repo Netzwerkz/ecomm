@@ -2,18 +2,21 @@ package com.netzwerk.ecomm.controller;
 
 import com.netzwerk.ecomm.dto.EcomDTO;
 import com.netzwerk.ecomm.serv.EcomServImpl;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/homepage")
+//@RequestMapping("/homepage")
 public class EcomController {
 
     @Autowired
     private EcomServImpl serv;
 
+    @ApiOperation("Save all")
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(@RequestBody EcomDTO dto) {
         boolean saved = serv.save(dto);
@@ -35,6 +38,17 @@ public class EcomController {
 
     @RequestMapping(value = "/findByName", method = RequestMethod.GET)
     public List<EcomDTO> findByName(@RequestParam String name){
+
         return serv.findByName(name);
+    }
+
+    @RequestMapping(value = "/allDev", method = RequestMethod.GET)
+    public List<EcomDTO> findAll( @RequestParam(defaultValue = "0") int pageMin,
+                                  @RequestParam(defaultValue = "10") int pageMax,
+                                  @RequestParam(defaultValue = "id") String sortBy,
+                                  @RequestParam(defaultValue = "ASC") String sortDirection){
+
+        Page<EcomDTO> page = serv.findAll(pageMin,pageMax,sortBy,sortDirection);
+        return page.getContent();
     }
 }

@@ -3,6 +3,8 @@ package com.netzwerk.ecomm.dto;
 import jakarta.persistence.*;
 import lombok.*;
 
+//import javax.persistence.*;
+
 //@Setter
 //@Getter
 
@@ -18,15 +20,15 @@ public class EcomDTO {
     private Integer id;
     private String name;
     private String model;
-    @Column(name="graphicCard")
+    @Column(name = "graphicCard")
     private String graphicCard;
     private String color;
     private String processor;
     private String os;
-    @Column(name="batterySupply")
+    @Column(name = "batterySupply")
     private String batterySupply;
     private Integer quantity;
-    @Column(name="uniqueId")
+    @Column(name = "uniqueId")
     private String uniqueId;
 
     public Integer getId() {
@@ -109,10 +111,19 @@ public class EcomDTO {
         this.uniqueId = uniqueId;
     }
 
-
     @Override
     public String toString() {
         return "EcomDTO{" +
-                "name='" + name + '\'' + '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                ", graphicCard='" + graphicCard + '\'' +
+                ", color='" + color + '\'' +
+                ", processor='" + processor + '\'' +
+                ", os='" + os + '\'' +
+                ", batterySupply='" + batterySupply + '\'' +
+                ", quantity=" + quantity +
+                ", uniqueId='" + uniqueId + '\'' +
+                '}';
     }
 }

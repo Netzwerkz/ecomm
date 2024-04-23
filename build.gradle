@@ -1,40 +1,45 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.4'
-	id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
-group = 'com.netzwerk'
+group = 'com.netzwerk.ecomm'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+    sourceCompatibility = '17'
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	// https://mvnrepository.com/artifact/org.projectlombok/lombok
-	implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
 
-	implementation group: 'org.springframework', name: 'spring-webmvc', version: '6.1.5'
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
 
-	implementation group: 'org.springframework', name: 'spring-orm', version: '6.1.5'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '3.2.4'
 
-	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 
-	implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.4.4.Final'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
-	implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '3.2.4'
+    // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
+    implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.20'
 
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.7.0'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
 
 }
 

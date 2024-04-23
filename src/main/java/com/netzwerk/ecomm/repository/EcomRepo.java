@@ -6,11 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//@Repository
+@Repository
 public interface EcomRepo extends JpaRepository<EcomDTO, Integer> {
 
     List<EcomDTO> findByName(String name);
 
 //    EcomDTO findByName(String name);
+
 
 }
