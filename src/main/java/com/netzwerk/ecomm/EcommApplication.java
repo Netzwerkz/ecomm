@@ -1,13 +1,11 @@
 package com.netzwerk.ecomm;
 
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 //@EnableJpaRepositories(basePackages = "com.netzwerk.ecomm.repository")
-@OpenAPIDefinition(info = @Info(title = "Ecomm API", version = "2.0", description = "Ecommerce Application"))
+//@OpenAPIDefinition(info = @Info(title = "Ecomm API", version = "2.0", description = "Ecommerce Application"))
 public class EcommApplication {
 
 	public static void main(String[] args) {
