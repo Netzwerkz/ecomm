@@ -1,16 +1,27 @@
 spring:
-    application:
-        name: ecomm
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: X-workZodc@123
-        url: jdbc:mysql://localhost:3306/xworkz
-        username: root
-    jpa:
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.MySQLDialect
-        show-sql: true
+  application:
+    name: ecomm
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: X-workZodc@123
+    url: jdbc:mysql://localhost:3306/xworkz
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+    net:
+      guides: DEBUG
+
+  file: Ecomm_log.log
 
 #springdoc:
 #    swagger-ui:
