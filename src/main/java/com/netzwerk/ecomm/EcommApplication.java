@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+
 //@EnableJpaRepositories(basePackages = "com.netzwerk.ecomm.repository")
 //@OpenAPIDefinition(info = @Info(title = "Ecomm API", version = "2.0", description = "Ecommerce Application"))
 public class EcommApplication {

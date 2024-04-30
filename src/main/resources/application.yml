@@ -4,15 +4,21 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: X-workZodc@123
-    url: jdbc:mysql://localhost:3306/xworkz
+    url: jdbc:mysql://localhost:3306/ecomm_dev
     username: root
+
+  profiles:
+    active: dev
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+        ddl-auto: create
     show-sql: true
 
 logging:
+  file:
+    name: ../ecomm/log/Ecomm_log.log
   level:
     org:
       springframework:
@@ -21,7 +27,6 @@ logging:
     net:
       guides: DEBUG
 
-  file: Ecomm_log.log
 
 #springdoc:
 #    swagger-ui:
