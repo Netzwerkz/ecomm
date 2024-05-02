@@ -12,8 +12,7 @@ import lombok.*;
 @RequiredArgsConstructor
 
 @Entity
-@Table(name = "ecommerce")
-
+@Table(name = "development")
 public class EcomDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -113,17 +112,6 @@ public class EcomDTO {
 
     @Override
     public String toString() {
-        return "EcomDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", model='" + model + '\'' +
-                ", graphicCard='" + graphicCard + '\'' +
-                ", color='" + color + '\'' +
-                ", processor='" + processor + '\'' +
-                ", os='" + os + '\'' +
-                ", batterySupply='" + batterySupply + '\'' +
-                ", quantity=" + quantity +
-                ", uniqueId='" + uniqueId + '\'' +
-                '}';
+        return "EcomDTO{" + "id=" + id + ", name='" + name + '\'' + ", model='" + model + '\'' + ", graphicCard='" + graphicCard + '\'' + ", color='" + color + '\'' + ", processor='" + processor + '\'' + ", os='" + os + '\'' + ", batterySupply='" + batterySupply + '\'' + ", quantity=" + quantity + ", uniqueId='" + uniqueId + '\'' + '}';
     }
 }

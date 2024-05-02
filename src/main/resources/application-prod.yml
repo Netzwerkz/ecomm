@@ -1,12 +1,9 @@
 spring:
-  application:
-      name: ecomm
   datasource:
-    url: jdbc:mysql://localhost:3306/ecomm_dev
-    username: root
-    password: X-workZodc@123
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+    password: X-workZodc@123
+    url: jdbc:mysql://localhost:3306/ecomm_prod
+    username: root
   jpa:
     properties:
       hibernate:
